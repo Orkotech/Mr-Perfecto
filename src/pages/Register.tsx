@@ -23,20 +23,31 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SignupForm onSubmit={handleRegister} isLoading={isLoading} />
-        
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-600">
-            Already have an account?{' '}
-            <Link
-              to="/login"
-              className="font-medium text-rose-600 hover:text-rose-500"
-            >
-              Sign in
-            </Link>
-          </p>
+    <div className="min-h-screen bg-gradient-to-b from-black to-rose-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-md mx-auto">
+          <div className="bg-black/40 backdrop-blur-sm rounded-lg border border-rose-500/20 shadow-lg shadow-rose-900/20 p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-white">Create Account</h2>
+              <p className="mt-2 text-gray-300">
+                Start your journey to becoming the perfect partner
+              </p>
+            </div>
+
+            <SignupForm onSubmit={handleRegister} isLoading={isLoading} />
+            
+            <div className="text-center mt-6">
+              <p className="text-gray-300">
+                Already have an account?{' '}
+                <Link
+                  to="/login"
+                  className="font-medium text-rose-400 hover:text-rose-300 transition-colors"
+                >
+                  Sign in
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,98 +1,91 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Gift, Calendar, Bell } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-          <span className="block">Become Her</span>
-          <span className="block text-rose-600">Perfect Partner</span>
-        </h1>
-        <div className="flex justify-center p-4">
-          <img
-src="https://nhbrzkpykisjvldzcskp.supabase.co/storage/v1/object/public/media/logo.png"
-            alt="Mr. Perfecto"
-            className="h-32 w-32"
-          />
+    <div className="min-h-screen bg-gradient-to-b from-black to-rose-900">
+      {/* Hero Section */}
+      <div className="relative h-[600px]">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("/images/hero-bg.jpg")', // Add a sensual, tasteful image
+            backgroundBlendMode: 'overlay',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
         </div>
-        <p className="mt-0 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Never miss an important date again. Get personalized gift recommendations
-          and romantic ideas to keep the spark alive.
-        </p>
-        <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <Link
-            to="/register"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700"
-          >
-            Dive Into Love
-          </Link>
+
+        {/* Hero Content */}
+        <div className="relative max-w-7xl mx-auto px-4 py-32">
+          <div className="max-w-xl">
+            <h1 className="text-5xl font-bold text-white mb-6">
+              Celebrate Love
+              <span className="text-rose-500"> Every Day</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Discover thoughtful ways to express your love and strengthen your relationship
+            </p>
+            <Link
+              to="/signup"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 transition-colors"
+            >
+              <Heart className="h-5 w-5 mr-2" />
+              Get Started
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="mt-24">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="pt-6">
-            <div className="flow-root bg-white rounded-lg px-6 pb-8">
-              <div className="-mt-6">
-                <div className="inline-flex items-center justify-center p-3 bg-rose-500 rounded-md shadow-lg">
-                  <img
-                    src="https://i.imgur.com/8tZT2Kl.png"
-                    alt="Special Dates"
-                    className="h-6 w-6 invert"
-                  />
-                </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Special Dates</h3>
-                <p className="mt-5 text-base text-gray-500">
-                  Never forget birthdays, anniversaries, and other special occasions
-                </p>
-              </div>
-            </div>
+      {/* Features Grid */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Feature Cards */}
+          <div className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-rose-500/20">
+            <h3 className="text-xl font-semibold text-white mb-4">Daily Challenges</h3>
+            <p className="text-gray-300">
+              Engage in daily activities designed to strengthen your bond and show your love
+            </p>
           </div>
 
-          <div className="pt-6">
-            <div className="flow-root bg-white rounded-lg px-6 pb-8">
-              <div className="-mt-6">
-                <div className="inline-flex items-center justify-center p-3 bg-rose-500 rounded-md shadow-lg">
-                  <Gift className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Perfect Gifts</h3>
-                <p className="mt-5 text-base text-gray-500">
-                  Get personalized gift recommendations based on her interests
-                </p>
-              </div>
-            </div>
+          <div className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-rose-500/20">
+            <h3 className="text-xl font-semibold text-white mb-4">Gift Ideas</h3>
+            <p className="text-gray-300">
+              Get personalized gift suggestions based on your partner's interests and preferences
+            </p>
           </div>
 
-<div className="pt-6">
-  <div className="flow-root bg-white rounded-lg px-6 pb-8 flex flex-col h-full">
-    <div className="-mt-6">
-      <div className="inline-flex items-center justify-center p-3 bg-rose-500 rounded-md shadow-lg">
-        <Calendar className="h-6 w-6 text-white" />
+          <div className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-rose-500/20">
+            <h3 className="text-xl font-semibold text-white mb-4">Special Moments</h3>
+            <p className="text-gray-300">
+              Never miss important dates and create unforgettable memories together
+            </p>
+          </div>
+        </div>
       </div>
-      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Smart Planning</h3>
-      <p className="mt-5 text-base text-gray-500 flex-grow">
-        Plan ahead with timely reminders and suggestions
-      </p>
-    </div>
-  </div>
-</div>
 
-
-<div className="pt-6">
-  <div className="flow-root bg-white rounded-lg px-6 pb-8 flex flex-col h-full">
-    <div className="-mt-6">
-      <div className="inline-flex items-center justify-center p-3 bg-rose-500 rounded-md shadow-lg">
-        <Bell className="h-6 w-6 text-white" />
-      </div>
-      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Timely Reminders</h3>
-      <p className="mt-5 text-base text-gray-500 flex-grow">
-        Get notifications for upcoming events and gift ideas
-      </p>
-    </div>
-  </div>
-</div>
+      {/* Testimonials Section */}
+      <div className="bg-black/60 backdrop-blur-sm py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Love Stories
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-black/40 p-6 rounded-lg border border-rose-500/20">
+              <p className="text-gray-300 italic mb-4">
+                "This app has transformed how I express love to my partner. The daily challenges keep our relationship fresh and exciting."
+              </p>
+              <p className="text-rose-400 font-medium">- Michael</p>
+            </div>
+            <div className="bg-black/40 p-6 rounded-lg border border-rose-500/20">
+              <p className="text-gray-300 italic mb-4">
+                "The gift suggestions are spot on! I've never been better at choosing presents that truly delight my partner."
+              </p>
+              <p className="text-rose-400 font-medium">- David</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
