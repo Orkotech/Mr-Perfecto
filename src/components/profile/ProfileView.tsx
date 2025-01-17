@@ -1,14 +1,15 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import type { Partner, SpecialDate } from '../../types';
+import { LoveGallery } from './LoveGallery.tsx';
 
 interface ProfileViewProps {
   partner: Partner;
   customDates: Omit<SpecialDate, 'id' | 'user_id' | 'partner_id' | 'created_at'>[];
+  userId: string;
 }
 
-export function ProfileView({ partner, customDates }: ProfileViewProps) {
+export function ProfileView({ partner, customDates, userId }: ProfileViewProps) {
   return (
     <div className="space-y-6">
       <div className="bg-white p-6 rounded-lg shadow space-y-6">
@@ -72,20 +73,8 @@ export function ProfileView({ partner, customDates }: ProfileViewProps) {
         </div>
       </div>
 
-      {/* Quiz Button */}
-      <Link
-        to="/quiz"
-        className="block w-full bg-black/40 backdrop-blur-sm text-white p-6 rounded-lg border border-rose-500/20 shadow-lg shadow-rose-900/20 hover:bg-black/50 transition-all duration-200 group"
-      >
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-2 text-rose-400 group-hover:text-rose-300">
-            Relationship Foundation Quiz
-          </h3>
-          <p className="text-gray-300 group-hover:text-gray-200">
-            Discover the strength of your relationship and get personalized insights
-          </p>
-        </div>
-      </Link>
+      {/* Love Gallery Section */}
+      <LoveGallery userId={userId} partnerId={partner.id} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { ProfileView } from '../components/profile/ProfileView';
@@ -138,7 +138,7 @@ export default function Profile() {
     setCustomDates(customDates.filter((_, i) => i !== index));
   };
 
-  if (!partner) {
+  if (!partner || !user) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center">
@@ -150,33 +150,48 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-rose-900">
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-      <h1 className="text-5xl font-bold text-white mb-6">
-              Love's
-              <span className="text-rose-500"> Portrait</span>
-            </h1>
-        <button
-          onClick={() => setIsEditing(!isEditing)}
-          className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-rose-600 hover:bg-rose-700"
-        >
-          {isEditing ? 'Cancel' : 'Edit Profile'}
-        </button>
-      </div>
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-5xl font-bold text-white mb-6">
+            Love's
+            <span className="text-rose-500"> Portrait</span>
+          </h1>
+          <button
+            onClick={() => setIsEditing(!isEditing)}
+            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-rose-600 hover:bg-rose-700"
+          >
+            {isEditing ? 'Cancel' : 'Edit Profile'}
+          </button>
+        </div>
 
-      {isEditing ? (
-        <ProfileForm
-          formData={formData}
-          customDates={customDates}
-          onSubmit={handleSubmit}
-          onChange={(data) => setFormData({ ...formData, ...data })}
-          onAddDate={handleAddDate}
-          onRemoveDate={handleRemoveDate}
-        />
-      ) : (
-        <ProfileView partner={partner} customDates={customDates} />
-      )}
-    </div>
+        {/* Quiz Link */}
+        <Link
+          to="/quiz"
+          className="block w-full bg-black/40 backdrop-blur-sm text-white p-6 rounded-lg border border-rose-500/20 shadow-lg shadow-rose-900/20 hover:bg-black/50 transition-all duration-200 group mb-8"
+        >
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-2 text-rose-400 group-hover:text-rose-300">
+              Relationship Foundation Quiz
+            </h3>
+            <p className="text-gray-300 group-hover:text-gray-200">
+              Discover the strength of your relationship and get personalized insights
+            </p>
+          </div>
+        </Link>
+
+        {isEditing ? (
+          <ProfileForm
+            formData={formData}
+            customDates={customDates}
+            onSubmit={handleSubmit}
+            onChange={(data) => setFormData({ ...formData, ...data })}
+            onAddDate={handleAddDate}
+            onRemoveDate={handleRemoveDate}
+          />
+        ) : (
+          <ProfileView partner={partner} customDates={customDates} userId={user.id} />
+        )}
+      </div>
     </div>
   );
 }

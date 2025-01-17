@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import PartnerSetup from './pages/PartnerSetup';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import RelationshipQuiz from './pages/RelationshipQuiz';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 
 function AppRoutes() {
@@ -25,6 +26,7 @@ function AppRoutes() {
       <Route path="/partner-setup" element={user ? <PartnerSetup /> : <Navigate to="/login" />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:id" element={<BlogPost />} />
+      <Route path="/quiz" element={user ? <RelationshipQuiz /> : <Navigate to="/login" />} />
     </Routes>
   );
 }
