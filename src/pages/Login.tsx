@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-b from-black to-rose-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LoginForm onSubmit={handleLogin} isLoading={isLoading} />
         

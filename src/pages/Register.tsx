@@ -26,10 +26,18 @@ export default function Register() {
     <div className="min-h-screen bg-gradient-to-b from-black to-rose-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-md mx-auto">
-          <div className="bg-black/40 backdrop-blur-sm rounded-lg border border-rose-500/20 shadow-lg shadow-rose-900/20 p-8">
+          <div className="bg-white backdrop-blur-sm rounded-lg border border-rose-500/20 shadow-lg shadow-rose-900/20 p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-white">Create Account</h2>
-              <p className="mt-2 text-gray-300">
+              <div className="mb-6 flex items-center justify-center">
+                <img
+                  src="/dist/assets/logo.png"
+                  alt="Mr. Perfecto"
+                  className="h-12 w-12"
+                />
+                <span className="ml-2 text-2xl font-bold text-Black">Mr. Perfecto</span>
+              </div>
+              <h2 className="text-3xl font-bold text-black">Create Account</h2>
+              <p className="mt-2 text-black">
                 Start your journey to becoming the perfect partner
               </p>
             </div>

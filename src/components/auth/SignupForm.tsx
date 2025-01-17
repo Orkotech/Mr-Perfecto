@@ -62,26 +62,11 @@ export function SignupForm({ onSubmit, isLoading }: SignupFormProps) {
   };
 
   return (
-    <div className="min-h-[500px] flex flex-col items-center justify-center">
-      <div className="mb-6 flex items-center">
-        <img
-          src="/dist/assets/images/logo.png"
-          alt="Mr. Perfecto"
-          className="h-12 w-12"
-        />
-        <span className="ml-2 text-2xl font-bold text-white">Mr. Perfecto</span>
-      </div>
-
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-white">Create your account</h2>
-        <p className="mt-2 text-sm text-white">
-          Join Mr. Perfecto and become a better partner
-        </p>
-      </div>
+    <div className="min-h- flex flex-col items-center justify-center">
       
       <form onSubmit={handleSubmit} className="w-full max-w-md space-y-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-white">
+          <label htmlFor="email" className="block text-sm font-medium text-black">
             Email
           </label>
           <input
@@ -101,7 +86,7 @@ export function SignupForm({ onSubmit, isLoading }: SignupFormProps) {
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-white">
+          <label htmlFor="password" className="block text-sm font-medium text-black">
             Password
           </label>
           <input
@@ -125,7 +110,7 @@ export function SignupForm({ onSubmit, isLoading }: SignupFormProps) {
         </div>
 
         <div>
-          <label htmlFor="confirmPassword" className="block text-sm font-medium text-white">
+          <label htmlFor="confirmPassword" className="block text-sm font-medium text-black">
             Confirm Password
           </label>
           <input

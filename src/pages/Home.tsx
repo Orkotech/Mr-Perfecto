@@ -29,7 +29,7 @@ export default function Home() {
               Discover thoughtful ways to express your love and strengthen your relationship
             </p>
             <Link
-              to="/signup"
+              to="/register"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 transition-colors"
             >
               <Heart className="h-5 w-5 mr-2" />
